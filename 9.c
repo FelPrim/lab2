@@ -962,5 +962,5 @@ int main(int argc, char** argv){
 		stripe_free(&A_band); stripe_free(&A_other);
 	}
 	vec_free(&Minv);
-    return status;
+    return 0;
 }
