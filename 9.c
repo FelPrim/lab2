@@ -917,6 +917,7 @@ int main(int argc, char** argv){
 	vzero(x.ptr, N);
 	int status = 0;
 	if (COMPARISON == 2){
+        puts("Solving with single CSR matrix");
 		compute_print_true_residual_single(&A, &b, &x);
 		double t0 = wall_seconds();
 		unsigned int iters=0; 
@@ -952,7 +953,10 @@ int main(int argc, char** argv){
 
 		compute_print_true_residual(&A_band, &A_other, &b, &x);
 	}
-
+    if (CONSOLE_OUTPUT)
+        printf("[%lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf]\n",
+        x.ptr[0], x.ptr[1], x.ptr[2], x.ptr[3], x.ptr[4], x.ptr[5], x.ptr[6], x.ptr[7], x.ptr[8]);
+    
     write_binary_vector(XFILE, &x);
 
     vec_free(&x); vec_free(&b);

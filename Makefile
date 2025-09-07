@@ -1,6 +1,6 @@
 # Переменные
 CC = gcc
-CFLAGS = -Ofast -Wall -Wextra -march=native -flto=auto -fipa-pta
+CFLAGS = -Ofast -Wall -Wextra -march=native -mtune=native -flto=auto -fipa-pta
 LDFLAGS = -lmatio -fopenmp -lz -lm
 INCLUDE = -I/usr/include
 LIBRARY = -L/usr/lib
